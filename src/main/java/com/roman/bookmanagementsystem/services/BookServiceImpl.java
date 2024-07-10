@@ -6,7 +6,6 @@ import com.roman.bookmanagementsystem.repositories.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,7 +35,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void createBooks(ArrayList<BookDto> bookDto) {
+    public void createBooks(List<BookDto> bookDto) {
         int batchSize = 100; // Adjustable
 
         List<List<Book>> batches = bookDto.stream()

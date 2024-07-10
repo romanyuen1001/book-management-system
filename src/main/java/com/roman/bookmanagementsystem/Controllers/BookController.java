@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -37,8 +36,8 @@ public class BookController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> createBooks(@RequestBody ArrayList<BookDto> bookDtoArrayList) {
-        bookServiceImpl.createBooks(bookDtoArrayList);
+    public ResponseEntity<Void> createBooks(@RequestBody List<BookDto> bookDtoList) {
+        bookServiceImpl.createBooks(bookDtoList);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
