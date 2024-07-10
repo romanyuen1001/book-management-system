@@ -1,7 +1,7 @@
 package com.roman.bookmanagementsystem.Controllers;
 
 import com.roman.bookmanagementsystem.models.Book;
-import com.roman.bookmanagementsystem.services.BookService;
+import com.roman.bookmanagementsystem.services.BookServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BookController {
     @Autowired
-    private final BookService bookService;
+    private final BookServiceImpl bookServiceImpl;
 
     @GetMapping("/test")
     public String test() {
@@ -24,6 +24,6 @@ public class BookController {
 
     @GetMapping()
     public List<Book> getAllBooks() {
-        return bookService.getAllBooks();
+        return bookServiceImpl.getAllBooks();
     }
 }
