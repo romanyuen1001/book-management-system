@@ -3,7 +3,6 @@ package com.roman.bookmanagementsystem.services;
 import com.roman.bookmanagementsystem.dtos.BookDto;
 import com.roman.bookmanagementsystem.models.Book;
 import com.roman.bookmanagementsystem.repositories.BookRepository;
-import jakarta.persistence.Id;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +23,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book getBookById(Long id) {
+    public Optional<Book> getBookById(Long id) {
         return bookRepository.findById(id);
     }
 

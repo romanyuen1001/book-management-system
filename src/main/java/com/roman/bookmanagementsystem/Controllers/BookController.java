@@ -28,7 +28,7 @@ public class BookController {
 
     @GetMapping("/get")
     @ResponseBody
-    public Optional<Book> getBookById(@RequestParam Long id) {
+    public Optional<Book> getBookById(@RequestParam Long id) { // TODO: dto in controller
         return bookServiceImpl.getBookById(id);
     }
 
