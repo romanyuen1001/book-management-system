@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("books")
@@ -21,25 +20,33 @@ public class BookController {
     @Autowired
     private final BookServiceImpl bookServiceImpl;
 
-    // TODO: Filter by author and published status
-    @GetMapping()
-    public List<Book> getAllBooks() {
-        return bookServiceImpl.getAllBooks();
+    @GetMapping
+    public ResponseEntity<List<Book>> getBooks(@RequestParam(required = false) String author,
+                               @RequestParam(required = false) Boolean published) {
+        List<Book> books;
+
+        if (author != null && published != null) {
+            books = bookServiceImpl.findByAuthorAndPublished(author, published);
+        } else if (author != null) {
+            books = bookServiceImpl.findByAuthor(author);
+        } else if (published != null) {
+            books = bookServiceImpl.findByPublished(published);
+        } else {
+            books = bookServiceImpl.findAll();
+        }
+        return ResponseEntity.ok(books);
     }
 
-    @GetMapping()
-    @ResponseBody
-    public Optional<Book> getBookById(@RequestParam Long id) { // TODO: dto in controller
-        return bookServiceImpl.getBookById(id);
-        // TODO: Err msg handle for frontend
-    }
-
-    @PostMapping()
+    @PostMapping
     @ResponseBody
     public ResponseEntity<Object> createBooks(@RequestBody ArrayList<BookDto> bookDtoArrayList) {
         bookServiceImpl.createBooks(bookDtoArrayList);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    // TODO: Delete by id
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
+        bookServiceImpl.deleteBook(id);
+        return ResponseEntity.noContent().build();
+    }
 }

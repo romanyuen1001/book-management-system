@@ -5,10 +5,12 @@ import com.roman.bookmanagementsystem.models.Book;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public interface BookService {
-    List<Book> getAllBooks();
-    Optional<Book> getBookById(Long id);
+    List<Book> findByAuthorAndPublished(String author, boolean published);
+    List<Book> findByAuthor(String author);
+    List<Book> findByPublished(boolean published);
+    List<Book> findAll();
     void createBooks(ArrayList<BookDto> bookDto);
+    void deleteBook(Long id);
 }
