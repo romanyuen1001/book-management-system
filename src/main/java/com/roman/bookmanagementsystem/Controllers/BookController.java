@@ -37,12 +37,14 @@ public class BookController {
 
     @PostMapping
     public ResponseEntity<Void> createBooks(@RequestBody List<BookDto> bookDtoList) {
+        // TODO: Add validation
         bookServiceImpl.createBooks(bookDtoList);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
+        // TODO: Consider check exist for error handle
         bookServiceImpl.deleteBook(id);
         return ResponseEntity.noContent().build();
     }
