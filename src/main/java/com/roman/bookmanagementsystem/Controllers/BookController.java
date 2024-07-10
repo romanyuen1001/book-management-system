@@ -15,31 +15,31 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("books")
+@RequestMapping("book")
 @RequiredArgsConstructor
 public class BookController {
     @Autowired
     private final BookServiceImpl bookServiceImpl;
 
-    @GetMapping()
+    @GetMapping("/list")
     public List<Book> getAllBooks() {
         return bookServiceImpl.getAllBooks();
     }
 
-    @GetMapping("/get")
+    @GetMapping()
     @ResponseBody
     public Optional<Book> getBookById(@RequestParam Long id) { // TODO: dto in controller
         return bookServiceImpl.getBookById(id);
     }
 
-    @PostMapping("create")
+    @PostMapping("/create")
     @ResponseBody
     public ResponseEntity<Object> createBook(@RequestBody BookDto bookDto) {
         bookServiceImpl.createBook(bookDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PostMapping()
+    @PostMapping("batch/create")
     @ResponseBody
     public ResponseEntity<Object> createBooks(@RequestBody ArrayList<BookDto> bookDtoArrayList) {
         bookServiceImpl.createBooks(bookDtoArrayList);
