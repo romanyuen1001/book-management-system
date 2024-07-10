@@ -9,7 +9,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     @Column(nullable = false)
     private String title;
@@ -18,5 +18,5 @@ public class Book {
     private String author;
 
     @Column(nullable = false)
-    private Boolean published; // TODO: default false
+    private Boolean published = false;
 }

@@ -1,6 +1,6 @@
 package com.roman.bookmanagementsystem.dtos;
 
 public class PublishBookDto {
-    public Long id;
+    public String id;
     public Boolean published;
 }

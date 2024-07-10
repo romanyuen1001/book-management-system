@@ -15,14 +15,14 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("book") // TODO: rest
+@RequestMapping("books")
 @RequiredArgsConstructor
 public class BookController {
     @Autowired
     private final BookServiceImpl bookServiceImpl;
 
     // TODO: Filter by author and published status
-    @GetMapping("/list")
+    @GetMapping()
     public List<Book> getAllBooks() {
         return bookServiceImpl.getAllBooks();
     }
@@ -34,14 +34,7 @@ public class BookController {
         // TODO: Err msg handle for frontend
     }
 
-    @PostMapping("/create") // TODO: Remove, by batch is enough
-    @ResponseBody
-    public ResponseEntity<Object> createBook(@RequestBody BookDto bookDto) {
-        bookServiceImpl.createBook(bookDto);
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
-
-    @PostMapping("batch/create")
+    @PostMapping()
     @ResponseBody
     public ResponseEntity<Object> createBooks(@RequestBody ArrayList<BookDto> bookDtoArrayList) {
         bookServiceImpl.createBooks(bookDtoArrayList);

@@ -10,6 +10,5 @@ import java.util.Optional;
 public interface BookService {
     List<Book> getAllBooks();
     Optional<Book> getBookById(Long id);
-    void createBook(BookDto bookDto);
     void createBooks(ArrayList<BookDto> bookDto);
 }
