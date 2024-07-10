@@ -1,14 +1,18 @@
 package com.roman.bookmanagementsystem.Controllers;
 
+import com.roman.bookmanagementsystem.dtos.BookDto;
 import com.roman.bookmanagementsystem.models.Book;
 import com.roman.bookmanagementsystem.services.BookServiceImpl;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("books")
@@ -17,13 +21,28 @@ public class BookController {
     @Autowired
     private final BookServiceImpl bookServiceImpl;
 
-    @GetMapping("/test")
-    public String test() {
-        return "Welcome to Book Management System API";
-    }
-
     @GetMapping()
     public List<Book> getAllBooks() {
         return bookServiceImpl.getAllBooks();
+    }
+
+    @GetMapping("/get")
+    @ResponseBody
+    public Optional<Book> getBookById(@RequestParam Long id) {
+        return bookServiceImpl.getBookById(id);
+    }
+
+    @PostMapping("create")
+    @ResponseBody
+    public ResponseEntity<Object> createBook(@RequestBody BookDto bookDto) {
+        bookServiceImpl.createBook(bookDto);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @PostMapping()
+    @ResponseBody
+    public ResponseEntity<Object> createBooks(@RequestBody ArrayList<BookDto> bookDtoArrayList) {
+        bookServiceImpl.createBooks(bookDtoArrayList);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 }
