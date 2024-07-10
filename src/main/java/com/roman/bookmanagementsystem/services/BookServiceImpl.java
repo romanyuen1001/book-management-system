@@ -58,6 +58,7 @@ public class BookServiceImpl implements BookService {
                 .collect(Collectors.toList());
 
         for (List<Book> batch : batches) {
+            // TODO: Check exist by author and title, consider id is generated
             bookRepository.saveAll(batch);
         }
     }

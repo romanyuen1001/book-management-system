@@ -15,12 +15,13 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("book")
+@RequestMapping("book") // TODO: rest
 @RequiredArgsConstructor
 public class BookController {
     @Autowired
     private final BookServiceImpl bookServiceImpl;
 
+    // TODO: Filter by author and published status
     @GetMapping("/list")
     public List<Book> getAllBooks() {
         return bookServiceImpl.getAllBooks();
@@ -30,9 +31,10 @@ public class BookController {
     @ResponseBody
     public Optional<Book> getBookById(@RequestParam Long id) { // TODO: dto in controller
         return bookServiceImpl.getBookById(id);
+        // TODO: Err msg handle for frontend
     }
 
-    @PostMapping("/create")
+    @PostMapping("/create") // TODO: Remove, by batch is enough
     @ResponseBody
     public ResponseEntity<Object> createBook(@RequestBody BookDto bookDto) {
         bookServiceImpl.createBook(bookDto);
@@ -45,4 +47,6 @@ public class BookController {
         bookServiceImpl.createBooks(bookDtoArrayList);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    // TODO: Delete by id
 }

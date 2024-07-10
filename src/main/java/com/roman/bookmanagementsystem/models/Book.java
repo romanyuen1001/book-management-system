@@ -18,5 +18,5 @@ public class Book {
     private String author;
 
     @Column(nullable = false)
-    private Boolean published;
+    private Boolean published; // TODO: default false
 }
