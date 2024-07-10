@@ -3,7 +3,6 @@ package com.roman.bookmanagementsystem.Controllers;
 import com.roman.bookmanagementsystem.dtos.BookDto;
 import com.roman.bookmanagementsystem.models.Book;
 import com.roman.bookmanagementsystem.services.BookServiceImpl;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,8 +37,7 @@ public class BookController {
     }
 
     @PostMapping
-    @ResponseBody
-    public ResponseEntity<Object> createBooks(@RequestBody ArrayList<BookDto> bookDtoArrayList) {
+    public ResponseEntity<Void> createBooks(@RequestBody ArrayList<BookDto> bookDtoArrayList) {
         bookServiceImpl.createBooks(bookDtoArrayList);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
