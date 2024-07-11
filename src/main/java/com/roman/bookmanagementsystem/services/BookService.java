@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface BookService {
     List<Book> findByAuthorAndPublished(String author, boolean published);
-    void createBooks(List<BookDto> bookDto);
-    void deleteBook(Long id);
+    List<Book> createBooks(List<BookDto> bookDto);
+    void deleteBook(Long id) throws IllegalArgumentException;
     Optional<Book> updateBookPublishedStatus(Long id, boolean published);
 }
