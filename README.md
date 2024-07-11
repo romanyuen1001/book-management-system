@@ -34,5 +34,7 @@ The app defines the following CRUD APIs.
 
 You can test them using Postman or any other rest client.
 
+Visit this published documentation in Postman to see the examples of the above APIs <https://documenter.getpostman.com/view/5603649/2sA3e4A9V9>
+
 ## Possible improvements / out of scope
 It is coming, stay tuned.
