@@ -21,18 +21,7 @@ public class BookController {
     @GetMapping
     public ResponseEntity<List<Book>> getBooks(@RequestParam(required = false) String author,
                                @RequestParam(required = false) Boolean published) {
-        List<Book> books;
-
-        if (author != null && published != null) {
-            books = bookServiceImpl.findByAuthorAndPublished(author, published);
-        } else if (author != null) {
-            books = bookServiceImpl.findByAuthor(author);
-        } else if (published != null) {
-            books = bookServiceImpl.findByPublished(published);
-        } else {
-            books = bookServiceImpl.findAll();
-        }
-        return ResponseEntity.ok(books);
+        return ResponseEntity.ok(bookServiceImpl.findByAuthorAndPublished(author, published));
     }
 
     @PostMapping

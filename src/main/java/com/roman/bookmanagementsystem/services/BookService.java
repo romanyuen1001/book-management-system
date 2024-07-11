@@ -7,9 +7,6 @@ import java.util.List;
 
 public interface BookService {
     List<Book> findByAuthorAndPublished(String author, boolean published);
-    List<Book> findByAuthor(String author);
-    List<Book> findByPublished(boolean published);
-    List<Book> findAll();
     void createBooks(List<BookDto> bookDto);
     void deleteBook(Long id);
 }

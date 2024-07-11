@@ -16,25 +16,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> findByAuthorAndPublished(String author, boolean published) {
-        // TODO: Implementation
-        return null;
-    }
-
-    @Override
-    public List<Book> findByAuthor(String author) {
-        // TODO: Implementation
-        return null;
-    }
-
-    @Override
-    public List<Book> findByPublished(boolean published) {
-        // TODO: Implementation
-        return null;
-    }
-
-    @Override
-    public List<Book> findAll() {
-        return bookRepository.findAll();
+        return bookRepository.findByAuthorAndPublished(author, published);
     }
 
     @Override
