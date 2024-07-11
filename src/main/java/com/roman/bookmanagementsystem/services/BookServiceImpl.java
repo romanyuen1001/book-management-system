@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -48,5 +49,18 @@ public class BookServiceImpl implements BookService {
     @Override
     public void deleteBook(Long id) {
         bookRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Book> updateBookPublishedStatus(Long id, boolean published) {
+        Optional<Book> optionalBook = bookRepository.findById(id);
+        if (optionalBook.isPresent()) {
+            Book book = optionalBook.get();
+            book.setPublished(published);
+            bookRepository.save(book);
+            return Optional.of(book);
+        } else {
+            return Optional.empty();
+        }
     }
 }

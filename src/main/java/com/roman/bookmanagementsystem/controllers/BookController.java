@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("books")
@@ -37,4 +38,18 @@ public class BookController {
         bookServiceImpl.deleteBook(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping("/{id}/publish")
+    public ResponseEntity<Book> updateBookPublishedStatus(
+            @PathVariable Long id,
+            @RequestParam boolean published) {
+        Optional<Book> updatedBook = bookServiceImpl.updateBookPublishedStatus(id, published);
+
+        if (updatedBook.isPresent()) {
+            return ResponseEntity.ok(updatedBook.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }
