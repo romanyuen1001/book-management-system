@@ -1,13 +1,13 @@
-# Book Management System
+# Book Management System 📚
 
 The Book Management System provides RESTful APIs that allow you to manage a collection of books. This API provides endpoints for creating, retrieving, updating, and deleting books.
 
-## Requirements
+## Requirements 📂
 1. Java 21
 2. Maven 
 3. Spring Boot
 
-## Steps to Setup
+## Steps to Setup 🌐
 **1. Download the zip file or clone the repository**
 ```bash
 git clone https://github.com/romanyuen1001/book-management-system.git
@@ -19,7 +19,7 @@ mvn spring-boot:run
 ```
 The app will start running at <http://localhost:8080>.
 
-## Explore Rest APIs
+## Explore Rest APIs 🔗
 You may want to visit <http://localhost:8080/swagger-ui/index.html> after running the application.
 
 The app defines the following CRUD APIs.
@@ -34,10 +34,20 @@ The app defines the following CRUD APIs.
 
 You can test them using Postman or any other rest client.
 
-#### Visit this [published documentation in Postman](https://documenter.getpostman.com/view/5603649/2sA3e4A9V9) to see the examples of the above APIs.
+#### Visit this [published documentation in Postman](https://documenter.getpostman.com/view/5603649/2sA3e4A9V9) to see the examples with the results of the above APIs.
 
-## Unit tests
+## Screenshots of APIs call 📷
+
+
+
+## Unit tests 💨
 A few cases are defined in BookServiceTest for testing validate and book service.
+<img width="1547" alt="image" src="https://github.com/romanyuen1001/book-management-system/assets/57783743/09c5c0ae-6637-422a-bb39-c7d566501e44">
+
   
-## Possible improvements / out of scope
+## Possible improvements / out of scope ✨ 
 It is coming, stay tuned.
+
+## Thankyou 🤗
+Thank you for taking the time to explore my project. I hope you find them informative and useful in learning Java and enhancing your programming skills.
+
