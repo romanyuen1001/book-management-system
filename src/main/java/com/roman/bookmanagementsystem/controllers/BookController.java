@@ -21,7 +21,7 @@ public class BookController {
 
     @GetMapping
     public ResponseEntity<List<Book>> getBooks(@RequestParam(required = false) String author,
-                               @RequestParam(required = false) Boolean published) {
+                               @RequestParam(required = true) Boolean published) {
         return ResponseEntity.ok(bookServiceImpl.findByAuthorAndPublished(author, published));
     }
 
