@@ -37,8 +37,8 @@ You can test them using Postman or any other rest client.
 #### Visit this [published documentation in Postman](https://documenter.getpostman.com/view/5603649/2sA3e4A9V9) to see the examples with the results of the above APIs.
 
 ## Screenshots of APIs call 📷
-<img width="1125" alt="image" src="https://github.com/romanyuen1001/book-management-system/assets/57783743/0ef2b00b-07d0-48fb-8d68-14d95b686dc0">
-<img width="1125" alt="image" src="https://github.com/romanyuen1001/book-management-system/assets/57783743/5a7e104a-50d1-42c9-ba18-1a2ef14e9004">
+<img width="1125" alt="image" src="https://github.com/romanyuen1001/book-management-system/assets/57783743/659fb7be-6dc6-4550-8a18-5e6a7c3b3c45">
+<img width="1125" alt="image" src="https://github.com/romanyuen1001/book-management-system/assets/57783743/6905c382-0a4b-4488-a3a3-d843fdaa207c">
 <img width="1125" alt="image" src="https://github.com/romanyuen1001/book-management-system/assets/57783743/e4cb3cd1-e38a-409e-91c7-34e25ff47a54">
 <img width="1125" alt="image" src="https://github.com/romanyuen1001/book-management-system/assets/57783743/76e3e97e-b9e4-4be6-b2b9-06d5cbe7a32d">
 <img width="1125" alt="image" src="https://github.com/romanyuen1001/book-management-system/assets/57783743/46a237ad-8b5c-4157-99d3-5b7c1eab01b0">
