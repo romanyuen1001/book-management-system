@@ -36,5 +36,8 @@ You can test them using Postman or any other rest client.
 
 #### Visit this [published documentation in Postman](https://documenter.getpostman.com/view/5603649/2sA3e4A9V9) to see the examples of the above APIs.
 
+## Unit tests
+A few cases are defined in BookServiceTest for testing validate and book service.
+  
 ## Possible improvements / out of scope
 It is coming, stay tuned.
