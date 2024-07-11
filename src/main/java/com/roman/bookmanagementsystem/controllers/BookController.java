@@ -3,6 +3,7 @@ package com.roman.bookmanagementsystem.controllers;
 import com.roman.bookmanagementsystem.dtos.BookDto;
 import com.roman.bookmanagementsystem.models.Book;
 import com.roman.bookmanagementsystem.services.BookServiceImpl;
+import jakarta.validation.ValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,17 +27,24 @@ public class BookController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> createBooks(@RequestBody List<BookDto> bookDtoList) {
-        // TODO: Add validation
-        bookServiceImpl.createBooks(bookDtoList);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+    public ResponseEntity<?> createBooks(@RequestBody List<BookDto> bookDtoList) {
+        List<Book> nonValidBooks = bookServiceImpl.createBooks(bookDtoList);
+
+        if (!nonValidBooks.isEmpty()) {
+            return ResponseEntity.badRequest().body("Some books failed validation: " + nonValidBooks.size());
+        }
+
+        return ResponseEntity.ok("All books added successfully.");
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
-        // TODO: Consider check exist for error handle
-        bookServiceImpl.deleteBook(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<?> deleteBook(@PathVariable Long id) {
+        try {
+            bookServiceImpl.deleteBook(id);
+            return ResponseEntity.ok(HttpStatus.OK);
+        } catch (IllegalArgumentException | ValidationException ex) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+        }
     }
 
     @PutMapping("/{id}/publish")
