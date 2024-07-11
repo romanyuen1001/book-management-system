@@ -27,7 +27,7 @@ The app defines the following CRUD APIs.
     
     POST localhost:8080/books (create books)
 
-    PUT localhost:8080/books/{id} (todo)
+    PUT localhost:8080/books/{id}/publish (update book published status)
     
     DELETE localhost:8080/books/{id} (delete book)
 
