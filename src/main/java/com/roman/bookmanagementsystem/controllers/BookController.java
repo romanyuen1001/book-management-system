@@ -1,4 +1,4 @@
-package com.roman.bookmanagementsystem.Controllers;
+package com.roman.bookmanagementsystem.controllers;
 
 import com.roman.bookmanagementsystem.dtos.BookDto;
 import com.roman.bookmanagementsystem.models.Book;
