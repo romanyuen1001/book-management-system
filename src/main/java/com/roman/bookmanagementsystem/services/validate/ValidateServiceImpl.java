@@ -14,7 +14,7 @@ public class ValidateServiceImpl implements ValidateService {
     }
 
     @Override
-    public void validateAuther(String string) {
+    public void validateAuthor(String string) {
         if (validateAlphanumericWithSpaces(string))
             throw new IllegalArgumentException("Invalid author: " + string);
     }

@@ -36,7 +36,7 @@ public class BookServiceImpl implements BookService {
 
         for (BookDto dto : bookDtoList) {
             try {
-                validateService.validateAuther(dto.getAuthor());
+                validateService.validateAuthor(dto.getAuthor());
                 validateService.validateTitle(dto.getTitle());
 
                 Book book = new Book();
