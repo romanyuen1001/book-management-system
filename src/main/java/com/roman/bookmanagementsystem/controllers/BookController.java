@@ -41,7 +41,7 @@ public class BookController {
     public ResponseEntity<?> deleteBook(@PathVariable Long id) {
         try {
             bookServiceImpl.deleteBook(id);
-            return ResponseEntity.ok(HttpStatus.OK);
+            return ResponseEntity.ok("Book deleted successfully.");
         } catch (IllegalArgumentException | ValidationException ex) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
         }
