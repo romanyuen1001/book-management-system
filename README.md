@@ -49,7 +49,8 @@ You can test them using Postman or any other rest client.
 
 ## Unit tests 💨
 A few cases are defined in BookServiceTest for testing validate and book service.
-<img width="1547" alt="image" src="https://github.com/romanyuen1001/book-management-system/assets/57783743/09c5c0ae-6637-422a-bb39-c7d566501e44">
+<img width="1261" alt="image" src="https://github.com/romanyuen1001/book-management-system/assets/57783743/060cac98-0689-4103-96cc-b6f232d09048">
+
 
   
 ## Possible improvements / out of scope ✨ 
