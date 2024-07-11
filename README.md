@@ -17,7 +17,7 @@ git clone https://github.com/romanyuen1001/book-management-system.git
 ```bash
 mvn spring-boot:run
 ```
-The app will start running at <http://localhost:8080>
+The app will start running at <http://localhost:8080>.
 
 ## Explore Rest APIs
 You may want to visit <http://localhost:8080/swagger-ui/index.html> after running the application.
@@ -34,7 +34,7 @@ The app defines the following CRUD APIs.
 
 You can test them using Postman or any other rest client.
 
-Visit this published documentation in Postman to see the examples of the above APIs <https://documenter.getpostman.com/view/5603649/2sA3e4A9V9>
+Visit this published documentation in Postman to see the examples of the above APIs <https://documenter.getpostman.com/view/5603649/2sA3e4A9V9>.
 
 ## Possible improvements / out of scope
 It is coming, stay tuned.
